@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Vokabix App Icon</title>
+  <desc id="desc">Gradientes rundes Quadrat mit stilisiertem V Buch / Sprechblase</desc>
+  <defs>
+    <linearGradient id="g" x1="40" y1="40" x2="472" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F8BFF"/>
+      <stop offset="0.55" stop-color="#9F6BFF"/>
+      <stop offset="1" stop-color="#FF5FA2"/>
+    </linearGradient>
+    <linearGradient id="vgrad" x1="160" y1="120" x2="352" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#E0E6F5" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="512" height="512" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="32" y="32" width="448" height="448" rx="120" fill="url(#g)" />
+  <path d="M140 148c0-14 10-24 24-24h184c14 0 24 10 24 24v132c0 14-10 24-24 24h-70l-48 48-2-48h-64c-14 0-24-10-24-24V148Z" fill="rgba(0,0,0,0.18)"/>
+  <path d="M148 140c0-13 10-20 24-20h168c14 0 24 7 24 20v136c0 13-10 20-24 20h-78l-44 44-2-44h-44c-14 0-24-7-24-20V140Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M174 172l60 180h44l60-180h-46l-36 126-36-126h-46Z" fill="url(#vgrad)" filter="url(#shadow)"/>
+  <circle cx="388" cy="372" r="36" fill="rgba(255,255,255,0.92)" />
+  <path d="M384 356h8v32h-8v-32Zm-8 8h8v8h-8v-8Zm16 8h8v8h-8v-8Z" fill="#4F2A84"/>
+</svg>
