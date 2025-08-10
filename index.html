@@ -1,84 +1,442 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung – Vokabel Trainer</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f8f8f8; color: #222; margin: 0; padding: 0; }
-        .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
-        h1, h2, h3 { color: #2a4d7a; }
-        a { color: #2a4d7a; text-decoration: underline; }
-        ul, ol { margin-left: 24px; }
-        .contact { margin-top: 32px; font-size: 0.95em; color: #555; }
-    </style>
+  <!-- Primary Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vokabix – Vokabeltrainer App zum Deutsch lernen | Offline, Spaced Repetition, KI Übersetzung</title>
+  <meta name="description" content="Vokabix Vokabeltrainer App: Deutsch & Fremdsprachen Vokabeln lernen mit Spaced Repetition, Offline Übersetzung (ML Kit), Lernstatistik, Ordner Organisation, tägliche Ziele & Datenschutz ohne Tracking." />
+  <meta name="keywords" content="Vokabeltrainer, Vokabeln lernen, Deutsch lernen App, Wortschatz trainieren, Spaced Repetition, offline Vokabeltrainer, KI Übersetzung, Lern App Schule, Vokabel App kostenlos, Text to Speech, Aussprache üben" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/index.html" />
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Vokabix – Intelligenter Vokabeltrainer (Offline & Datenschutzfreundlich)" />
+  <meta property="og:description" content="Vokabeln nachhaltig lernen: Spaced Repetition, Offline Übersetzungen, Lernziele, Kalender & Statistik. Keine Tracker." />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="screenshots/Bildschirmfoto%202025-08-10%20um%2009.49.49.png" />
+  <meta property="og:site_name" content="Vokabix" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vokabix – Moderner Vokabeltrainer" />
+  <meta name="twitter:description" content="Deutsch & Fremdsprachen Vokabeln lernen – KI Übersetzung, Offline, motivierende Fortschrittsanzeige." />
+  <meta name="twitter:image" content="screenshots/Bildschirmfoto%202025-08-10%20um%2009.50.00.png" />
+  <!-- Existing fonts & styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="../app_icon.svg" />
+  <!-- Structured Data: Software Application & FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vokabix",
+    "url": "https://example.com/",
+    "inLanguage": "de",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://example.com/?q={search_term}",
+      "query-input": "required name=search_term"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vokabix",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "featureList": [
+      "Spaced Repetition Lernalgorithmus",
+      "Offline Übersetzungen mit ML Kit",
+      "Ordner & Farborganisation",
+      "Kalender Lernfortschritt",
+      "Tägliche Lernziele & Sterne-System",
+      "Statistik & Antwortanalyse",
+      "Text to Speech Aussprache",
+      "Datenschutz ohne Tracking"
+    ],
+    "description": "Vokabeltrainer App zum nachhaltigen Lernen von Deutsch & Fremdsprachen Vokabeln mit Offline KI Übersetzungen und intelligentem Wiederholungssystem.",
+    "image": "https://example.com/html/screenshots/Bildschirmfoto%202025-08-10%20um%2009.49.49.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"Organization","name":"Vokabix","url":"https://example.com/","logo":"https://example.com/app_icon.svg","sameAs":[]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Vokabeln nachhaltig lernen mit Spaced Repetition",
+    "description": "Schritte wie Vokabix den Lernprozess strukturiert (ansehen, aktiv erinnern, Feedback, Intervall-Anpassung)",
+    "step": [
+      {"@type":"HowToStep","name":"Karte ansehen","text":"Vokabelkarte mit Kontext erscheint"},
+      {"@type":"HowToStep","name":"Antwort abrufen","text":"Nutzer erinnert sich aktiv und gibt Lösung ein"},
+      {"@type":"HowToStep","name":"Feedback","text":"Sofortige Rückmeldung richtig/falsch"},
+      {"@type":"HowToStep","name":"Intervall Anpassung","text":"Score erhöht oder reduziert Wiederholungsabstände"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Start","item":"https://example.com/index.html"},
+      {"@type":"ListItem","position":2,"name":"Features","item":"https://example.com/index.html#features"}
+    ]
+  }
+  </script>
+  <!-- AI-SUMMARY: Vokabix offline Vokabeltrainer: Spaced Repetition, ML Kit Offline Übersetzung, Lernstatistik, Ziele, Datenschutz (keine Cloud, keine Tracker), Kalender & Erinnerung für nachhaltiges Deutsch/Fremdsprachen Lernen. -->
 </head>
 <body>
-    <div class="container">
-        <h1>Datenschutzerklärung</h1>
-        <h2>1. Verantwortlicher</h2>
-        <p>Stephan Bast<br>Quendelring 11<br>30659 Hannover<br>Deutschland<br>E-Mail: <a href="mailto:stephan.bast@googlemail.com">stephan.bast@googlemail.com</a><br>Telefon: +49 151 241486971</p>
-        <h2>2. Allgemeine Hinweise</h2>
-        <p>Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten in unserer Android-App "Vokabel Trainer" auf. Die Verarbeitung erfolgt auf Grundlage der geltenden datenschutzrechtlichen Bestimmungen, insbesondere der EU-Datenschutz-Grundverordnung (DSGVO).</p>
-        <h2>3. Datenverarbeitung in der App</h2>
-        <h3>3.1 Lokal gespeicherte Daten</h3>
-        <ul>
-            <li>Ihre eingegebenen Vokabeln und Übersetzungen</li>
-            <li>Lernfortschritte und Statistiken</li>
-            <li>App-Einstellungen und Präferenzen</li>
-            <li>Tägliche Lernziele</li>
-        </ul>
-        <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)<br>
-        <strong>Zweck:</strong> Bereitstellung der App-Funktionalität und Speicherung Ihrer Lerninhalte<br>
-        <strong>Speicherort:</strong> Alle diese Daten werden ausschließlich lokal auf Ihrem Gerät gespeichert und nicht an Server oder Dritte übertragen.</p>
-        <h3>3.2 Google ML Kit Translation</h3>
-        <ul>
-            <li>Automatische Übersetzungsanfragen (nur bei Nutzung der Übersetzungsfunktion)</li>
-            <li>Technische Geräteinformationen für Model-Downloads</li>
-        </ul>
-        <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)<br>
-        <strong>Zweck:</strong> Bereitstellung der Offline-Übersetzungsfunktion<br>
-        <strong>Datenübertragung:</strong> Google ML Kit lädt Sprachmodelle von Google-Servern herunter. Hierbei können technische Daten wie IP-Adresse und Geräteinformationen übertragen werden.<br>
-        <strong>Weitere Informationen:</strong> <a href="https://developers.google.com/ml-kit/language/translation/privacy" target="_blank">ML Kit Translation Privacy</a></p>
-        <h3>3.3 Google Play Services</h3>
-        <ul>
-            <li>Grundlegende Geräteinformationen</li>
-            <li>Technische Daten für die Funktionsfähigkeit der Google-Services</li>
-        </ul>
-        <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)<br>
-        <strong>Zweck:</strong> Bereitstellung der ML Kit-Funktionalität<br>
-        <strong>Weitere Informationen:</strong> <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
-        <h2>4. Berechtigungen</h2>
-        <h3>4.1 Internetberechtigung (android.permission.INTERNET)</h3>
-        <p><strong>Zweck:</strong> Ausschließlich für den Download von ML Kit-Sprachmodellen</p>
-        <h3>4.2 Netzwerkstatus (android.permission.ACCESS_NETWORK_STATE)</h3>
-        <p><strong>Zweck:</strong> Überprüfung der Netzwerkverbindung für Model-Downloads</p>
-        <h2>5. Ihre Rechte</h2>
-        <ul>
-            <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO)</li>
-            <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO)</li>
-            <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO)</li>
-            <li><strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
-            <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
-            <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO)</li>
-        </ul>
-        <p>Da alle Ihre Lerndaten lokal auf Ihrem Gerät gespeichert sind, können Sie diese jederzeit durch Deinstallation der App oder durch Löschen der App-Daten in den Android-Einstellungen vollständig entfernen.</p>
-        <h2>6. Datensicherheit</h2>
-        <ul>
-            <li>Alle Lerndaten werden ausschließlich lokal auf Ihrem Gerät gespeichert</li>
-            <li>Keine Übertragung von Lerndaten an externe Server</li>
-            <li>Nutzung aktueller Android-Sicherheitsstandards</li>
-            <li>Regelmäßige Updates der verwendeten Bibliotheken</li>
-        </ul>
-        <h2>7. Änderungen der Datenschutzerklärung</h2>
-        <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie an geänderte Rechtslage oder bei Änderungen der App anzupassen. Die jeweils aktuelle Datenschutzerklärung kann in der App eingesehen werden.</p>
-        <h2>8. Kontakt</h2>
-        <div class="contact">
-            Stephan Bast<br>
-            E-Mail: <a href="mailto:stephan.bast@googlemail.com">stephan.bast@googlemail.com</a><br>
-            Telefon: +49 151 241486971<br><br>
-            <small><strong>Stand:</strong> August 2025 (Version 1.0)</small>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="nav-brand" href="#top">
+        <img src="../app_icon.svg" alt="Vokabix Logo" />
+        <span>Vokabix</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features" class="active">Features</a>
+        <a href="#lernen">Lernen</a>
+        <a href="#organisation">Organisation</a>
+        <a href="#statistiken">Fortschritt</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="https://play.google.com/store/apps/details?id=com.github.higgens75.vokabix&pcampaignid=web_share">Download</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <div class="badges">
+          <span>🇩🇪 Deutsch lernen</span>
+          <span>🇬🇧 Englisch</span>
+          <span>🇪🇸 Spanisch</span>
+          <span>🇫🇷 Französisch</span>
+          <span>🇮🇹 Italienisch</span>
+          <span>🇵🇹 Portugiesisch</span>
+          <span>🇳🇱 Niederländisch</span>
+          <span>🇸🇪 Schwedisch</span>
+          <span>🇳🇴 Norwegisch</span>
+          <span>🇩🇰 Dänisch</span>
+          <span>🇵🇱 Polnisch</span>
+          <span>🇨🇿 Tschechisch</span>
+          <span>🇷🇺 Russisch</span>
+          <span>🇨🇳 Chinesisch</span>
+          <span>🔁 Spaced Repetition</span>
+          <span>📱 Offline</span>
+          <span>🧠 Smart</span>
         </div>
+        <h1>Der intelligente<br/>Vokabeltrainer<br/>für deinen Alltag</h1>
+        <p class="lead">Vokabix kombiniert intelligente Wiederholungsintervalle, Offline‑Übersetzungen, adaptive Lernziele und eine starke Organisation – damit neue Wörter wirklich im Kopf bleiben. Perfekt für Schule, Studium und Selbstlernen.</p>
+        <div class="cta-group">
+          <a href="https://play.google.com/store/apps/details?id=com.github.higgens75.vokabix&pcampaignid=web_share" class="btn">Jetzt kostenlos starten</a>
+          <a href="datenschutz.html" class="btn outline">Datenschutz</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="device-frame" aria-hidden="true">
+          <div class="device-status"></div>
+          <div class="mock-card">
+            <div class="mock-title">Lernfortschritt</div>
+            <div class="progress-bar"><span></span></div>
+            <div class="word-row"><strong>Haus</strong><span>house</span></div>
+            <div class="word-row"><strong>gehen</strong><span>go</span></div>
+            <div class="word-row"><strong>lernen</strong><span>study</span></div>
+            <div class="word-row"><strong>Schule</strong><span>school</span></div>
+            <div class="folder-tags">
+              <span>Alltag</span><span>Verben</span><span>Schule</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <h2>Alles was nachhaltiges Lernen braucht</h2>
+      <p class="section-intro">Statt nur stumpf zu wiederholen, führt dich Vokabix mit einem motivierenden System durch deinen Wortschatz. Von der ersten Erfassung bis zur sicheren Beherrschung.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔁</div>
+            <h3>Intelligente Wiederholung</h3>
+            <p>Angepasstes Intervalltraining, damit du genau dann übst, wenn dein Gehirn es braucht.</p>
+            <div class="feature-meta">Algorithmus</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+            <h3>Offline Übersetzungen</h3>
+            <p>Mit ML Kit ganz ohne Internet schnell & zuverlässig Wörter ergänzen.</p>
+            <div class="feature-meta">ML Kit</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗂️</div>
+            <h3>Ordner & Struktur</h3>
+            <p>Kategorisiere nach Themen, Unterricht, Prüfungen oder eigenen Bereichen.</p>
+            <div class="feature-meta">Organisation</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+            <h3>Lernstatistiken</h3>
+            <p>Tägliche Ziele, Fortschrittssterne, Kalender & Trend-Übersichten.</p>
+            <div class="feature-meta">Motivation</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+            <h3>Schnellsuche</h3>
+            <p>Finde Wörter sofort oder füge neue direkt während der Eingabe hinzu.</p>
+            <div class="feature-meta">Produktivität</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+            <h3>Privat & Lokal</h3>
+            <p>Alle Daten bleiben auf deinem Gerät. Keine Cloud, kein Tracking.</p>
+            <div class="feature-meta">Datenschutz</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+            <h3>Individuelle Lernziele</h3>
+            <p>Setze tägliche Ziele & steigere deine Lernroutine spielerisch.</p>
+            <div class="feature-meta">Gewohnheiten</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗣️</div>
+            <h3>TTS & Aussprache</h3>
+            <p>Text‑to‑Speech hilft beim Hören & Festigen von Wortklang und Rhythmus.</p>
+            <div class="feature-meta">Audio</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-narrow" id="lernen">
+      <h2>Effektives Lernen statt Auswendig-Druck</h2>
+      <p class="section-intro">Wörter verschwinden nicht mehr einfach – du wiederholst sie genau im richtigen Moment. Der Fortschrittsbalken mit Sternen zeigt dir spielerisch, wie stabil dein Wissen ist.</p>
+      <div class="split">
+        <div>
+          <h3>So funktioniert das System</h3>
+          <p>Neue Vokabeln starten bei Score 0. Mit jeder richtigen Antwort steigt der Wert und die Wiederholungsabstände werden größer. Fehler? Kein Problem – die Karte rutscht gezielt zurück und bleibt präsent.</p>
+          <ul>
+            <li>Adaptive Intervalle</li>
+            <li>Smarter Zufallsquiz-Modus</li>
+            <li>Kontextfreundliche Einordnung</li>
+            <li>Motivierendes Sterne-System</li>
+          </ul>
+        </div>
+        <div class="visual-card" aria-label="Lernmechanik Darstellung" style="background:#1b2332;border:1px solid #2a3548;border-radius:26px;padding:28px;display:flex;flex-direction:column;gap:18px;box-shadow:0 12px 40px -12px rgba(0,0,0,.55);">
+          <h3 style="margin:0;font-size:1rem;letter-spacing:.5px;text-transform:uppercase;opacity:.75;">Lernfluss</h3>
+          <div style="display:grid;grid-template-columns:1fr;gap:10px;font-size:.8rem;line-height:1.4;color:#c5ccdc;">
+            <div style="background:#212b3b;padding:12px 14px;border-radius:16px;border:1px solid #324153;display:flex;gap:10px;align-items:center;">
+              <span>🃏</span><span>Karte erscheint & Kontext merken</span>
+            </div>
+            <div style="background:#212b3b;padding:12px 14px;border-radius:16px;border:1px solid #324153;display:flex;gap:10px;align-items:center;">
+              <span>✍️</span><span>Antwort geben (aktiv abrufen)</span>
+            </div>
+            <div style="background:#212b3b;padding:12px 14px;border-radius:16px;border:1px solid #324153;display:flex;gap:10px;align-items:center;">
+              <span>⚡</span><span>Sofortiges Feedback</span>
+            </div>
+            <div style="background:#212b3b;padding:12px 14px;border-radius:16px;border:1px solid #324153;display:flex;gap:10px;align-items:center;">
+              <span>📈</span><span>Score & Intervall passen sich an</span>
+            </div>
+          </div>
+          <div style="margin-top:auto;font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;opacity:.55;">Adaptiver Algorithmus</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="organisation">
+      <h2>Dein Wortschatz, perfekt strukturiert</h2>
+      <p class="section-intro">Ordner, Filter & Suche geben dir jederzeit Überblick. Bereite Prüfungen vor oder erstelle thematische Sammlungen – alles blitzschnell zugänglich.</p>
+      <div class="split">
+        <div class="visual-card" aria-label="Organisation Konzept" style="background:#1b2332;border:1px solid #2a3548;border-radius:26px;padding:26px;display:flex;flex-direction:column;gap:16px;box-shadow:0 12px 40px -12px rgba(0,0,0,.55);">
+          <h3 style="margin:0;font-size:1rem;letter-spacing:.5px;text-transform:uppercase;opacity:.75;">Struktur</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;font-size:.7rem;">
+            <div style="background:#212b3b;padding:14px 12px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">🗂️</span><strong>Ordner</strong><span style="opacity:.7;">Themen & Kurse</span>
+            </div>
+            <div style="background:#212b3b;padding:14px 12px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">🔎</span><strong>Suche</strong><span style="opacity:.7;">Global & live</span>
+            </div>
+            <div style="background:#212b3b;padding:14px 12px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">🔄</span><strong>Schnell</strong><span style="opacity:.7;">Verschieben</span>
+            </div>
+            <div style="background:#212b3b;padding:14px 12px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">🎯</span><strong>Fokus</strong><span style="opacity:.7;">Filter</span>
+            </div>
+          </div>
+          <div style="margin-top:auto;font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;opacity:.55;">Klar & Schnell</div>
+        </div>
+        <div>
+          <h3>Features für Überblick</h3>
+          <p>Wechsle blitzschnell zwischen Ordnern, suche innerhalb aller Sammlungen oder füge Wörter direkt beim Tippen hinzu – ohne Moduswechsel.</p>
+          <ul>
+            <li>Ordner & Farben</li>
+            <li>Schnell verschieben & bearbeiten</li>
+            <li>Kontextbezogene Vorschläge</li>
+            <li>Kalender für Lernaktivität</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-narrow" id="statistiken">
+      <h2>Fortschritt sichtbar machen</h2>
+      <p class="section-intro">Ein klarer Kalender, Tagesziele, Prozentfortschritt, Antwortstatistiken und Trendindikatoren machen Lernen transparenter – und motivierender.</p>
+      <div class="split">
+        <div>
+          <h3>Motivation durch Feedback</h3>
+          <p>Vokabix zeigt dir, was du heute geschafft hast, welche Tage stark waren und wo noch Luft ist. So entsteht eine nachhaltige Lernroutine.</p>
+          <ul>
+            <li>Tägliche Fortschrittsziele</li>
+            <li>Antwortstatistiken pro Wort</li>
+            <li>Kalender-Ansicht</li>
+            <li>Gezielte Wiederholungsimpulse</li>
+          </ul>
+        </div>
+        <div class="visual-card" aria-label="Statistik Konzept" style="background:#1b2332;border:1px solid #2a3548;border-radius:26px;padding:26px;display:flex;flex-direction:column;gap:18px;box-shadow:0 12px 40px -12px rgba(0,0,0,.55);">
+          <h3 style="margin:0;font-size:1rem;letter-spacing:.5px;text-transform:uppercase;opacity:.75;">Fortschritt</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;font-size:.65rem;">
+            <div style="background:#212b3b;padding:12px 10px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">⭐</span><strong>Sterne</strong><span style="opacity:.65;">Stabilität</span>
+            </div>
+            <div style="background:#212b3b;padding:12px 10px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">📆</span><strong>Kalender</strong><span style="opacity:.65;">Aktivität</span>
+            </div>
+            <div style="background:#212b3b;padding:12px 10px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">📊</span><strong>Quote</strong><span style="opacity:.65;">Richtig%</span>
+            </div>
+            <div style="background:#212b3b;padding:12px 10px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">🔥</span><strong>Streak</strong><span style="opacity:.65;">Routine</span>
+            </div>
+            <div style="background:#212b3b;padding:12px 10px;border-radius:14px;border:1px solid #334055;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+              <span style="font-size:1.1rem;">🧠</span><strong>Lernlast</strong><span style="opacity:.65;">Fällig heute</span>
+            </div>
+          </div>
+          <div style="margin-top:auto;font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;opacity:.55;">Übersicht statt Überflutung</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <h2>Bereit für deine nächste Lernsession?</h2>
+      <p class="section-intro">Starte jetzt und erlebe wie angenehm fokussiertes Wortschatztraining sein kann.</p>
+      <div class="callout">
+        <h2>Lernen. Verstehen. Behalten.</h2>
+        <p>Baue deinen Wortschatz nachhaltig auf – mit einer App, die dich unterstützt statt ablenkt. Datenschutzfreundlich. Effektiv. Klar.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.github.higgens75.vokabix&pcampaignid=web_share" class="btn" aria-label="Download im Play Store">Download im Play Store</a>
+        <div style="margin-top:28px; display:flex; justify-content:center; gap:18px; flex-wrap:wrap;">
+          <span class="privacy-badge" title="Keine externen Tracker">
+            <svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 3.3c2.5 2 5 2.7 8 2.9-.2 6.2-3.2 10.7-8 13-4.8-2.3-7.8-6.8-8-13 3-.2 5.5-.9 8-2.9Z"/><path d="M9 12.3l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Lokal & Sicher
+          </span>
+          <span class="privacy-badge" title="Offline nutzbar">🔌 Offlinefähig</span>
+          <span class="privacy-badge" title="ML Kit integriert">🤖 ML Kit</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="screenshots">
+      <h2>Einblicke in die App</h2>
+      <p class="section-intro">So sieht Vokabix in Aktion aus – klare Oberfläche, fokussiert aufs Lernen.</p>
+      <div style="display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+        <figure style="margin:0;">
+          <img loading="lazy" src="screenshots/Bildschirmfoto%202025-08-10%20um%2009.52.13.png" alt="Vokabix Lernfortschritt Übersicht mit Tagesziel" style="width:100%; border-radius:22px; border:1px solid #2a3548; background:#121822;"/>
+          <figcaption style="font-size:.7rem; letter-spacing:.5px; margin-top:8px; text-transform:uppercase; opacity:.65;">Lernfortschritt</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img loading="lazy" src="screenshots/Bildschirmfoto%202025-08-10%20um%2009.52.44.png" alt="Quiz Modus Karte mit Antwort Eingabe" style="width:100%; border-radius:22px; border:1px solid #2a3548; background:#121822;"/>
+          <figcaption style="font-size:.7rem; letter-spacing:.5px; margin-top:8px; text-transform:uppercase; opacity:.65;">Quiz Modus</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img loading="lazy" src="screenshots/Bildschirmfoto%202025-08-10%20um%2009.53.04.png" alt="Ansicht mit Ordnern und Organisation von Vokabeln" style="width:100%; border-radius:22px; border:1px solid #2a3548; background:#121822;"/>
+          <figcaption style="font-size:.7rem; letter-spacing:.5px; margin-top:8px; text-transform:uppercase; opacity:.65;">Ordner & Struktur</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <img loading="lazy" src="screenshots/Bildschirmfoto%202025-08-10%20um%2009.50.00.png" alt="Einstellungen und Sprachpakete Übersicht" style="width:100%; border-radius:22px; border:1px solid #2a3548; background:#121822;"/>
+          <figcaption style="font-size:.7rem; letter-spacing:.5px; margin-top:8px; text-transform:uppercase; opacity:.65;">Einstellungen</figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- FAQ Section for SEO -->
+    <section class="section section-narrow" id="faq">
+      <h2>Häufige Fragen zum Vokabel lernen mit Vokabix</h2>
+      <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+        <div class="feature-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Ist Vokabix kostenlos?</h3>
+          <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">Ja, die Basisfunktionen wie Vokabeln anlegen, Quiz, Offline Übersetzungen und Lernstatistik sind kostenlos nutzbar.</span></p>
+        </div>
+        <div class="feature-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Wie funktioniert das Spaced Repetition?</h3>
+          <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">Richtige Antworten erhöhen den Score und verlängern die Wiederholungsabstände. Fehler holen Karten zurück – so verankerst du Wörter langfristig.</span></p>
+        </div>
+        <div class="feature-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Kann ich offline lernen?</h3>
+          <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">Ja. Vokabeln, Übersetzungen (nach Download) und Quiz funktionieren komplett offline.</span></p>
+        </div>
+        <div class="feature-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Werden meine Daten synchronisiert?</h3>
+          <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">Nein. Alle Daten bleiben lokal auf deinem Gerät. Kein Tracking, keine Cloud.</span></p>
+        </div>
+        <div class="feature-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Unterstützt die App Aussprache Training?</h3>
+          <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">Ja. Mit Text‑to‑Speech kannst du dir Wörter vorlesen lassen und Klang & Rhythmus einprägen.</span></p>
+        </div>
+        <div class="feature-card" itemscope itemtype="https://schema.org/Question">
+          <h3 itemprop="name">Kann ich Vokabeln nach Themen ordnen?</h3>
+          <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><span itemprop="text">Ordner, Farben und Suchfilter helfen dir beim Aufbau thematischer Wortschatz-Sammlungen.</span></p>
+        </div>
+      </div>
+    </section>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Ist Vokabix kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Ja, Basisfunktionen wie Vokabeln, Quiz, Offline Übersetzungen und Statistik sind kostenlos."}},
+        {"@type":"Question","name":"Wie funktioniert Spaced Repetition?","acceptedAnswer":{"@type":"Answer","text":"Richtige Antworten erhöhen Score & Intervall, Fehler verkürzen – optimierte Wiederholung zur Langzeitverankerung."}},
+        {"@type":"Question","name":"Kann ich offline lernen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Nach initialem Download der Sprachpakete laufen Quiz & Übersetzungen offline."}},
+        {"@type":"Question","name":"Werden Daten getrackt?","acceptedAnswer":{"@type":"Answer","text":"Nein. Keine Tracker, keine Cloud. Alles lokal gespeichert."}},
+        {"@type":"Question","name":"Gibt es Aussprache Training?","acceptedAnswer":{"@type":"Answer","text":"Ja. Text‑to‑Speech unterstützt dich beim Hören & Festigen."}},
+        {"@type":"Question","name":"Kann ich Themen-Ordner erstellen?","acceptedAnswer":{"@type":"Answer","text":"Ordner & Farbcodierung für Prüfungen, Themenbereiche, Lernpläne."}}
+      ]
+    }
+    </script>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Vokabix</h4>
+        <a href="#features">Features</a>
+        <a href="#lernen">Lernen</a>
+        <a href="#organisation">Organisation</a>
+        <a href="#statistiken">Fortschritt</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+      <div>
+        <h4>App</h4>
+        <a href="https://play.google.com/store/apps/details?id=com.github.higgens75.vokabix&pcampaignid=web_share">Download</a>
+        <a href="#top">Zurück nach oben</a>
+      </div>
+      <div>
+        <h4>Status</h4>
+        <a href="#">Version 1.0.14</a>
+        <a href="#">Changelog (in App)</a>
+      </div>
     </div>
+    <div class="copyright">© 2025 Vokabix. Alle Rechte vorbehalten.</div>
+  </footer>
+  <div style="max-width:900px;margin:0 auto;padding:0 28px 40px;">
+    <p class="ai-summary" style="font-size:.55rem;opacity:.55;line-height:1.4;margin-top:60px;">Kurzfassung: Vokabix ist ein offline-fähiger deutschsprachiger & mehrsprachiger Vokabeltrainer mit Spaced Repetition, adaptiven Lernzielen, ML Kit Offline Übersetzungen, Kalender- & Statistikfunktionen, lokalem Datenschutz ohne Tracking.</p>
+  </div>
 </body>
 </html>
